@@ -4,16 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chase Bank Clone</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #0047ab;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            color: yellow;
+            text-decoration: underline;
+        }
+
+        /* Main Section */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        main section {
+            margin-bottom: 30px;
+        }
+
+        #login input {
+            margin: 5px 0;
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #login button {
+            background-color: #0047ab;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login button:hover {
+            background-color: #003580;
+        }
+
+        #user-message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Chase Bank</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -32,12 +120,44 @@
                 <li>Loans</li>
             </ul>
         </section>
+
+        <section id="login">
+            <h2>Login to Your Account</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button id="login-button">Login</button>
+            <p id="user-message"></p>
+        </section>
     </main>
 
     <footer>
         <p>© 2025 Chase Bank. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // Simulate a login system
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginButton = document.getElementById("login-button");
+            const userMessage = document.getElementById("user-message");
+
+            // Handle login button click
+            if (loginButton) {
+                loginButton.addEventListener("click", function () {
+                    const username = document.getElementById("username").value;
+                    const password = document.getElementById("password").value;
+
+                    // Simple validation (for demonstration only)
+                    if (username === "user" && password === "password") {
+                        userMessage.textContent = "Login successful! Welcome back, " + username + ".";
+                        userMessage.style.color = "green";
+                    } else {
+                        userMessage.textContent = "Invalid username or password. Please try again.";
+                        userMessage.style.color = "red";
+                    }
+                });
+            }
+        });
+
+        // Simulate navigation highlighting
+        const navLinks = document.querySelectorAll("nav ul li a");
+        nav
