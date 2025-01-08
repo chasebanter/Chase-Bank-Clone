@@ -37,6 +37,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+nav ul li a.active {
+    color: yellow;
+    text-decoration: underline;
+}
+
 /* Main Section */
 main {
     padding: 20px;
@@ -45,6 +50,35 @@ main {
 
 main section {
     margin-bottom: 30px;
+}
+
+/* Login Section */
+#login input {
+    margin: 5px 0;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login button {
+    background-color: #0047ab;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login button:hover {
+    background-color: #003580;
+}
+
+#user-message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* Footer */
